@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.slider input[type="radio"] {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url(img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 1s;
+}
+
+.slider input[type="radio"].radio1:checked ~ .slide {
+  background-position-x: 0;
+}
+
+.slider input[type="radio"].radio2:checked ~ .slide {
+  background-position-x: -780px;
+}
+
+.slider input[type="radio"].radio3:checked ~ .slide {
+  background-position-x: -1360px;
+}
+
+.text-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  opacity: 0;
+  text-align: center;
+  transition: 1s;
+}
+
+.text-slide h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 6em;
+  line-height: 0.8em;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.text-slide p {
+  font-size: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.slider input[type="radio"].radio1:checked ~ .text1 {
+  opacity: 1;
+}
+
+.slider input[type="radio"].radio2:checked ~ .text2 {
+  opacity: 1;
+}
+
+.slider input[type="radio"].radio3:checked ~ .text3 {
+  opacity: 1;
+}
